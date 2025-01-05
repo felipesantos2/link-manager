@@ -14,3 +14,5 @@ Route::view('profile', 'profile')
 
 
 require __DIR__.'/auth.php';
+
+// testar os scripts de style e js do livewire - autoimport

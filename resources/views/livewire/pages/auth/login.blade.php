@@ -24,22 +24,18 @@ new #[Layout('layouts.auth')] class extends Component {
 }; ?>
 
 
-<div class="min-h-screen flex flex-row sm:justify-center items-center pt-6 sm:pt-0 bg-primary px-5">
-    <div class="basis-1/2">
-       <img class="w-[724px] h-[728px]" src="{{ Vite::asset('resources/images/banner.png') }}" alt="banner" srcset="">
-    </div>
-    <div>
-        <div class="basis-1/2">
-            <div>
+<div class="min-h-screen flex flex-row-reverse sm:justify-center items-center pt-6 sm:pt-0 bg-primary px-5">
+    <div class="basis-1/2 flex">
+        <div class="px-20 flex w-full h-full flex-col align-center">
+            {{-- <div>
                 <a href="/" wire:navigate>
-                    <x-application-logo class=" w-60 h-20 fill-current" />
+                    <x-application-logo class="w-60 h-20 fill-current" />
                 </a>
-            </div>
+            </div> --}}
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 overflow-hidden sm:rounded-lg">
-
+            <div class="mt-6 py-4 overflow-hidden sm:rounded-lg">
                 <h2 class="text-2xl my-4 font-semibold"> Acessar Conta </h2>
-
+                {{-- <span class="border-b bg-second p-0.5 -rotate-180 inline-block w-7"></span> --}}
                 <div>
                     <!-- Session Status -->
                     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -47,7 +43,7 @@ new #[Layout('layouts.auth')] class extends Component {
                     <form wire:submit="login">
                         <!-- Email Address -->
                         <div>
-                            <x-input-label for="email" :value="__('Email')" c class="text-white" />
+                            <x-input-label for="email" :value="__('E-mail')" c class="text-white" />
                             <x-text-input wire:model="form.email" id="email" class="block mt-1 w-full bg-input rounded-xl border-none" type="email"
                                 name="email" required autofocus autocomplete="username" />
                             <x-input-error :messages="$errors->get('form.email')" class="mt-2" />
@@ -81,8 +77,8 @@ new #[Layout('layouts.auth')] class extends Component {
                                 </a>
                             @endif
 
-                            <x-primary-button class="ms-3 bg-second px-5 py-3 rounded-">
-                                {{ __('Criar conta') }}
+                            <x-primary-button type="submit" class="ms-3 bg-second px-5 py-3 rounded-">
+                                {{ __('Acessar Conta') }}
                             </x-primary-button>
                         </div>
 
@@ -95,6 +91,10 @@ new #[Layout('layouts.auth')] class extends Component {
             </div>
         </div>
     </div>
+    <div class="basis-1/2">
+        <img class="p-5" src="{{ Vite::asset('resources/images/banner.png') }}" alt="banner" srcset="">
+     </div>
+</div>
 
 
 
