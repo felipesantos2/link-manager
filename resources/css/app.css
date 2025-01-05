@@ -8,3 +8,6 @@
 .bg-second {
     @apply bg-[#ED712E];
 }
+.bg-input {
+    @apply bg-[#1E1E1E];
+}
